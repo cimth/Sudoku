@@ -30,6 +30,16 @@ __Notes to the GUI:__
   _"Compare With Solution"_ below the board.
 * Green printed values are inserted by the application after clicking on _"Solve Completely"_ or _"Next Step"_.
 
+## Included dependencies
+
+| Dependency            | Version |
+|-----------------------|---------|
+| Java                  | 11      |
+| JUnit                 | 4.13    |
+| Log4j                 | 2.17.1  |
+| Maven Compiler Plugin | 3.9.0   |
+| Maven Assembly Plugin | 3.3.0   |
+
 ## Structure:
 
 The package `main` includes the `Start` class which is the entry point of the application.
