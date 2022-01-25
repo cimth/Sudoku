@@ -65,5 +65,5 @@ the user interface (right now the GUI is available in German and English).
 ## Build and start JAR:
 
 1. Execute the Maven goal `package`
-2. The JAR file _./target/Sudoku-1.0-SNAPSHOT-jar-with-dependencies.jar_ includes all dependencies and can directly be 
+2. The JAR file _./target/Sudoku-2.2.1-SNAPSHOT-jar-with-dependencies.jar_ includes all dependencies and can directly be 
    started with a double click if Java 11 is installed on the device
