@@ -39,6 +39,7 @@ __Notes to the GUI:__
 | Log4j                 | 2.17.1  |
 | Maven Compiler Plugin | 3.9.0   |
 | Maven Assembly Plugin | 3.3.0   |
+| Versions Maven Plugin | 2.9.0   |
 
 ## Structure:
 
