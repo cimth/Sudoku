@@ -34,7 +34,7 @@ __Notes to the GUI:__
 
 | Dependency            | Version |
 |-----------------------|---------|
-| Java                  | 11      |
+| Java                  | 17      |
 | JUnit                 | 4.13    |
 | Log4j                 | 2.17.1  |
 | Maven Compiler Plugin | 3.9.0   |
