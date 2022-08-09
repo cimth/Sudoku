@@ -1,11 +1,8 @@
 package model;
 
 import computing.SudokuGenerator;
-import org.junit.Test;
-
-import java.util.Collections;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class SudokuTest {
 
@@ -21,7 +18,7 @@ public class SudokuTest {
         Object o = new Object();
 
         // check for equality
-        assertFalse(sudoku.equals(o));
+        Assertions.assertNotEquals(sudoku, o);
     }
 
     @Test
@@ -39,8 +36,8 @@ public class SudokuTest {
         Sudoku sudokuB = new Sudoku(board);
 
         // check both directions for equality
-        assertTrue(sudokuA.equals(sudokuB));
-        assertTrue(sudokuA.equals(sudokuB));
+        Assertions.assertEquals(sudokuA, sudokuB);
+        Assertions.assertEquals(sudokuA, sudokuB);
 
     }
 
@@ -66,7 +63,7 @@ public class SudokuTest {
         Sudoku sudokuB = new Sudoku(boardB);
 
         // check for equality
-        assertFalse(sudokuA.equals(sudokuB));
+        Assertions.assertNotEquals(sudokuA, sudokuB);
     }
 
     /*==================================================*
@@ -81,7 +78,7 @@ public class SudokuTest {
         Sudoku copy = original.copy();
         copy.makeFilledCellsImmutable();
 
-        assertTrue(original.equals(copy));
+        Assertions.assertEquals(original, copy);
     }
 
     @Test
@@ -93,7 +90,7 @@ public class SudokuTest {
         copy.getBoard()[0][0].setValue(4);
         copy.makeFilledCellsImmutable();
 
-        assertFalse(original.equals(copy));
+        Assertions.assertNotEquals(original, copy);
     }
 
     /*==================================================*
@@ -107,14 +104,14 @@ public class SudokuTest {
         Sudoku copy = original.copy();
 
         // check that copy and original are not the same but equal
-        assertFalse(original == copy);
-        assertTrue(original.equals(copy));
+        Assertions.assertNotSame(original, copy);
+        Assertions.assertEquals(original, copy);
 
         // check that each cell is not the same but equal
         for (int row = 0; row < 9; row++) {
             for(int col = 0; col < 9; col++) {
-                assertFalse(original.getBoard()[row][col] == copy.getBoard()[row][col]);
-                assertTrue(original.getBoard()[row][col].equals(copy.getBoard()[row][col]));
+                Assertions.assertNotSame(original.getBoard()[row][col], copy.getBoard()[row][col]);
+                Assertions.assertEquals(original.getBoard()[row][col], copy.getBoard()[row][col]);
             }
         }
     }
@@ -141,7 +138,7 @@ public class SudokuTest {
         sudoku.checkAndMarkDuplicates();
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                assertTrue(sudoku.getBoard()[row][col].isValid());
+                Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
             }
         }
     }
@@ -164,10 +161,10 @@ public class SudokuTest {
 
                 if (row == 0 && (col == 0 || col == 1)) {
                     // duplicates
-                    assertFalse(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertFalse(sudoku.getBoard()[row][col].isValid());
                 } else {
                     // no duplicates
-                    assertTrue(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
                 }
             }
         }
@@ -190,10 +187,10 @@ public class SudokuTest {
 
                 if (row == 0) {
                     // duplicates
-                    assertFalse(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertFalse(sudoku.getBoard()[row][col].isValid());
                 } else {
                     // no duplicates
-                    assertTrue(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
                 }
             }
         }
@@ -217,7 +214,7 @@ public class SudokuTest {
         sudoku.checkAndMarkDuplicates();
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
-                assertTrue(sudoku.getBoard()[row][col].isValid());
+                Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
             }
         }
     }
@@ -240,10 +237,10 @@ public class SudokuTest {
 
                 if (col == 0 && (row == 0 || row == 1)) {
                     // duplicates
-                    assertFalse(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertFalse(sudoku.getBoard()[row][col].isValid());
                 } else {
                     // no duplicates
-                    assertTrue(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
                 }
             }
         }
@@ -266,10 +263,10 @@ public class SudokuTest {
 
                 if (col == 0) {
                     // duplicates
-                    assertFalse(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertFalse(sudoku.getBoard()[row][col].isValid());
                 } else {
                     // no duplicates
-                    assertTrue(sudoku.getBoard()[row][col].isValid());
+                    Assertions.assertTrue(sudoku.getBoard()[row][col].isValid());
                 }
             }
         }
@@ -294,7 +291,7 @@ public class SudokuTest {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 current = sudoku.getBoard()[row][col];
-                assertArrayEquals(allValues, sudoku.getPossibleValues(current).toArray(result));
+                Assertions.assertArrayEquals(allValues, sudoku.getPossibleValues(current).toArray(result));
             }
         }
     }
@@ -321,13 +318,13 @@ public class SudokuTest {
 
                 if (row <= 2 && col <= 2) {
                     // cells in first box should return possible values (2..9)
-                    assertArrayEquals(shouldBeResult, sudoku.getPossibleValues(current).toArray(resultForAffectedUnits));
+                    Assertions.assertArrayEquals(shouldBeResult, sudoku.getPossibleValues(current).toArray(resultForAffectedUnits));
                 } else if (row == 0 || col == 0) {
                     // cells in first row and first column should return possible values (2..9)
-                    assertArrayEquals(shouldBeResult, sudoku.getPossibleValues(current).toArray(resultForAffectedUnits));
+                    Assertions.assertArrayEquals(shouldBeResult, sudoku.getPossibleValues(current).toArray(resultForAffectedUnits));
                 } else {
                     // all other cells should return possible values (1..9)
-                    assertArrayEquals(allValues, sudoku.getPossibleValues(current).toArray(resultForNonAffectedUnits));
+                    Assertions.assertArrayEquals(allValues, sudoku.getPossibleValues(current).toArray(resultForNonAffectedUnits));
                 }
             }
         }

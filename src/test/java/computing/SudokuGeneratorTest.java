@@ -2,10 +2,8 @@ package computing;
 
 import model.Cell;
 import model.Sudoku;
-import org.junit.Assert;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class SudokuGeneratorTest {
 
@@ -24,8 +22,8 @@ public class SudokuGeneratorTest {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 currentCell = sudoku.getBoard()[row][col];
-                assertFalse(currentCell.isEditable());
-                assertTrue(currentCell.getValue() == 0);
+                Assertions.assertFalse(currentCell.isEditable());
+                Assertions.assertEquals(0, currentCell.getValue());
             }
         }
 
@@ -46,8 +44,8 @@ public class SudokuGeneratorTest {
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                 currentCell = sudoku.getBoard()[row][col];
-                assertTrue(currentCell.isEditable());
-                assertTrue(currentCell.getValue() == 0);
+                Assertions.assertTrue(currentCell.isEditable());
+                Assertions.assertEquals(0, currentCell.getValue());
             }
         }
 

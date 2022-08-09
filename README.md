@@ -35,11 +35,14 @@ __Notes to the GUI:__
 | Dependency            | Version |
 |-----------------------|---------|
 | Java                  | 17      |
-| JUnit                 | 4.13.2  |
-| Log4j                 | 2.17.1  |
-| Maven Compiler Plugin | 3.9.0   |
-| Maven Assembly Plugin | 3.3.0   |
-| Versions Maven Plugin | 2.9.0   |
+| JUnit                 | 5.9.0   |
+| Log4j                 | 2.18.0  |
+| JAXB API              | 2.3.1   |
+| JAXB Runtime          | 4.0.0   |
+| Maven Compiler Plugin | 3.10.1  |
+| Exec Maven Plugin     | 3.1.0   |
+| Maven Assembly Plugin | 3.4.2   |
+| Versions Maven Plugin | 2.11.0  |
 
 ## Structure:
 
