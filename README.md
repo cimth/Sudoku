@@ -1,4 +1,5 @@
-# Sudoku
+Sudoku
+======
 
 ## Introduction
 
@@ -66,8 +67,11 @@ Some helpful classes which may not be strictly limited to the logic of a Sudoku 
 package. This package also includes the class `LanguageBundle` which is needed for supporting different languages for 
 the user interface (right now the GUI is available in German and English).
 
+## Build and start with Maven:
+
+Run `mvn clean package exec:java`
+
 ## Build and start JAR:
 
-1. Execute the Maven goal `package`
-2. The JAR file _./target/Sudoku-2.2.1-SNAPSHOT-jar-with-dependencies.jar_ includes all dependencies and can directly be 
-   started with a double click if Java 11 is installed on the device
+1. Run `mvn clean package`
+2. Run `java -jar ./target/Sudoku.jar`
