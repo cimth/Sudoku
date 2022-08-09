@@ -1,8 +1,7 @@
 package model;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CellTest {
 
@@ -18,7 +17,7 @@ public class CellTest {
         Object o = new Object();
 
         // check for equality
-        assertFalse(cell.equals(o));
+        Assertions.assertNotEquals(cell, o);
     }
 
     @Test
@@ -29,7 +28,7 @@ public class CellTest {
         Cell cellB = new Cell(2, 2, 5, true, true, false, true);
 
         // check for equality
-        assertTrue(cellA.equals(cellB));
+        Assertions.assertEquals(cellA, cellB);
 
     }
 
@@ -59,13 +58,13 @@ public class CellTest {
         Cell cellB_param7 = new Cell(2, 2, 5, true, true, false, false);
 
         // check each cell A and B changed in only one parameter for equality
-        assertFalse(cellA_param1.equals(cellB_param1));
-        assertFalse(cellA_param2.equals(cellB_param2));
-        assertFalse(cellA_param3.equals(cellB_param3));
-        assertFalse(cellA_param4.equals(cellB_param4));
-        assertFalse(cellA_param5.equals(cellB_param5));
-        assertFalse(cellA_param6.equals(cellB_param6));
-        assertFalse(cellA_param7.equals(cellB_param7));
+        Assertions.assertNotEquals(cellA_param1, cellB_param1);
+        Assertions.assertNotEquals(cellA_param2, cellB_param2);
+        Assertions.assertNotEquals(cellA_param3, cellB_param3);
+        Assertions.assertNotEquals(cellA_param4, cellB_param4);
+        Assertions.assertNotEquals(cellA_param5, cellB_param5);
+        Assertions.assertNotEquals(cellA_param6, cellB_param6);
+        Assertions.assertNotEquals(cellA_param7, cellB_param7);
     }
 
 }
